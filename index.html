@@ -37,28 +37,35 @@
         points = 5;
         radius1: 40;
         radius2: 50;
-        var star1 = new Path.Star(view.center, points, radius1, radius2);
+        var star1 = new Path.Star(center, points, radius1, radius2);
         star1.fillColor = 'black';
 
         points = 5;
         radius1: 40;
         radius2: 50;
-        var star2 = new Path.Star(view.center.x + 50, points, radius1, radius2);
+        var star2 = new Path.Star(550, points, radius1, radius2);
         star2.fillColor = 'black';
     
         points = 5;
         radius1: 40;
         radius2: 50;
-        var star3 = new Path.Star(view.center.x -100, points, radius1, radius2);
+        var star3 = new Path.Star(400, points, radius1, radius2);
         star3.fillColor = 'black';
 
-        var rectangle1 = new Rectangle(new Point (view.center.x + 200, 20), new Size( 60, 40))
-        var rectangle2 = new Rectangle(new Point (view.center.x + 240, 20), new Size( 60, 40))
+        var rectangle1 = new Rectangle(new Point 700, 20), new Size( 60, 40))
+        var rectangle2 = new Rectangle(new Point (740, 20), new Size( 60, 40))
         points = 5;
         var oval1 = new Path.Ellipse(rectangle1);
         var oval2 = new Path.Ellipse(rectangle2);
         oval1.fillColor = 'black';
         oval2.fillColor = 'black';
+
+        var square = new Path.Rectangle({
+            position: view.center,
+            size: 300,
+            parent: originals,
+            fillColor: 'white'
+        });
        
         
         function lerp(a, b, t){
@@ -117,13 +124,12 @@
             //    fillColor : secondaryColor
             //});
 
-
-           var allFigure = new Group({
-                children: [star1, star2, star3, oval1, oval2],
-                
-                position: [ view.center.x + 65, view.center.y + 110 ]
-            });
             
+            //var allFigure = new Group({
+            //    children: [theTieWrapPath, theTiePath,linePathRender,linePathOriginal,linePathWave],
+            //    
+            //    position: [ view.center.x + 65, view.center.y + 110 ]
+           // });
             
             allFigure.fitBounds(view.bounds);
         }
