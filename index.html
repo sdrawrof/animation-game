@@ -35,20 +35,20 @@
         //new shapes
        
         points = 5;
-        radius1: 40;
-        radius2: 50;
+        radius1 = 40;
+        radius2 = 50;
         var star1 = new Path.Star(center, points, radius1, radius2);
         star1.fillColor = 'black';
 
         points = 5;
-        radius1: 40;
-        radius2: 50;
+        radius1 = 40;
+        radius2 = 50;
         var star2 = new Path.Star(550, points, radius1, radius2);
         star2.fillColor = 'black';
     
         points = 5;
-        radius1: 40;
-        radius2: 50;
+        radius1 = 40;
+        radius2 = 50;
         var star3 = new Path.Star(400, points, radius1, radius2);
         star3.fillColor = 'black';
 
@@ -117,19 +117,19 @@
             
             linePathRender.strokeWidth = lineProHeight/40;
             
-            // Grouping tie elements
-           // var tieGroup = new Group({
-           //     children: [theTieWrapPath, theTiePath],
-           //     
-            //    fillColor : secondaryColor
-            //});
+            Grouping tie elements
+           var tieGroup = new Group({
+                children: [theTieWrapPath, theTiePath],
+                
+                fillColor : secondaryColor
+            });
 
             
-            //var allFigure = new Group({
-            //    children: [theTieWrapPath, theTiePath,linePathRender,linePathOriginal,linePathWave],
-            //    
-            //    position: [ view.center.x + 65, view.center.y + 110 ]
-           // });
+            var allFigure = new Group({
+                children: [theTieWrapPath, theTiePath,linePathRender,linePathOriginal,linePathWave],
+                
+                position: [ view.center.x + 65, view.center.y + 110 ]
+            });
             
             allFigure.fitBounds(view.bounds);
         }
