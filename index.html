@@ -31,6 +31,12 @@
         
         var amount                  = linePathOriginal.segments.length ; 
         var center                  = view.center; 
+
+        //new shapes
+        var oval = new Path.Circle({
+            center: view.center,
+            radius: 140,
+            fillColor: 'white'})
         
         function lerp(a, b, t){
             return a + t * (b - a);
