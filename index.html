@@ -49,10 +49,11 @@
         radius2: 50;
         var star3 = new Path.Star(view.center.x -100, points, radius1, radius2);
 
-        var rectangle = new Rectangle(new Point (20,20), new Size( 60, 40))
+        var rectangle1 = new Rectangle(new Point (view.center.x + 200 ,20), new Size( 60, 40))
+        var rectangle2 = new Rectangle(new Point (view.center.x + 240,20), new Size( 60, 40))
         points = 5;
-        var oval1 = new Path.Ellipse(view.center.x -500, points, radius1, radius2);
-        var oval2 = new Path.Ellipse(view.center.x -560, points, radius1, radius2)
+        var oval1 = new Path.Ellipse(rectangle1);
+        var oval2 = new Path.Ellipse(rectangle2);
        
         
         function lerp(a, b, t){
