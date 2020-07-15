@@ -33,23 +33,39 @@
         var center                  = view.center; 
 
         //new shapes
-        var oval = new Path.Star({
+        var star1 = new Path.Star({
             center: view.center,
             points: 5,
             radius1: 40,
             radius2: 50})
 
-        var oval = new Path.Star({
+        var star2 = new Path.Star({
             center: view.center +50,
             points: 5,
             radius1: 40,
             radius2: 50})
     
-        var oval = new Path.Star({
+        var star3 = new Path.Star({
             center: view.center -100,
             points: 5,
             radius1: 40,
             radius2: 50})
+
+        var rectangle = new Rectangle(new Point (20,20), new Size( 60, 40))
+        var oval1 = new Path.Ellipse({
+            center: view.center -500,
+            points: 5,
+            radius1: 40,
+            radius2: 50})
+            oval1.fillColor = 'black';
+
+        var rectangle = new Rectangle(new Point (20,20), new Size( 60, 40))
+        var oval2 = new Path.Ellipse({
+        center: view.center +500,
+        points: 5,
+        radius1: 40,
+        radius2: 50})
+        oval2.fillColor = 'black';
         
         function lerp(a, b, t){
             return a + t * (b - a);
@@ -101,15 +117,28 @@
             linePathRender.strokeWidth = lineProHeight/40;
             
             // Grouping tie elements
-            var tieGroup = new Group({
-                children: [theTieWrapPath, theTiePath],
-                
+           // var tieGroup = new Group({
+           //     children: [theTieWrapPath, theTiePath],
+           //     
+            //    fillColor : secondaryColor
+            //});
+
+            //grouping these shapes
+            var shapesGroup = new Group({
+                children: [star1, star2, star3, oval1, oval2],
+
                 fillColor : secondaryColor
             });
             
             
-            var allFigure = new Group({
-                children: [theTieWrapPath, theTiePath,linePathRender,linePathOriginal,linePathWave],
+            //var allFigure = new Group({
+            //    children: [theTieWrapPath, theTiePath,linePathRender,linePathOriginal,linePathWave],
+            //    
+            //    position: [ view.center.x + 65, view.center.y + 110 ]
+           // });
+
+           var allFigure = new Group({
+                children: [star1, star2, star3, oval1, oval2],
                 
                 position: [ view.center.x + 65, view.center.y + 110 ]
             });
